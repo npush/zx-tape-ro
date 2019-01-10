@@ -90,8 +90,8 @@ int main(void)
     InitAVR();
     DRAM_Init();
     WH1602_Init();
-    //SD_Init();
-    //FAT_Init();
+    SD_Init();
+    FAT_Init();
 //запускаем основное меню
     unsigned char select_item=0;
     while(1) {
@@ -101,7 +101,7 @@ int main(void)
         if (select_item==2) strcpy(string,"> Магнитофон x4 <");
         if (select_item==3) strcpy(string,">  Тест памяти  <");
         WH1602_SetTextDownLine(string);
-//        _delay_ms(500);
+        _delay_ms(500);
         //ждём нажатий кнопок
         while(1) {
             if (scanKey() == BUTTON_UP) {

@@ -13,8 +13,8 @@ BUILDDIR = debug
 ## Options common to compile, link and assembly rules
 COMMON = -mmcu=$(MCU)
 
-DEBUG = -ggdb
-#DEBUG = -gdwarf-2
+#DEBUG = -ggdb
+DEBUG = -gdwarf-2
 
 ## Compile options common for all C compilation units.
 CFLAGS = $(COMMON)
@@ -29,7 +29,7 @@ ASMFLAGS += -x assembler-with-cpp -Wa,$(DEBUG)
 ## Linker flags
 LDFLAGS = $(COMMON)
 LDFLAGS += -lm -Wl,-Map=$(BUILDDIR)/zx-tape.map
-#-Wl,-u,vfprintf -lprintf_min
+LDFLAGS += -Wl,-u,vfprintf -lprintf_min
 
 ## Intel Hex file production flags
 HEX_FLASH_FLAGS = -R .eeprom -R .fuse -R .lock -R .signature

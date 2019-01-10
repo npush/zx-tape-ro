@@ -7,15 +7,15 @@
 
 #define SD_DI_DDR   DDRB
 #define SD_DI_PORT  PORTB
-#define SD_DI       6
+#define SD_DI       5
 
 #define SD_DO_DDR   DDRB
 #define SD_DO_PORT  PORTB
-#define SD_DO       7
+#define SD_DO       6
 
 #define SD_SCK_DDR  DDRB
 #define SD_SCK_PORT PORTB
-#define SD_SCK      5
+#define SD_SCK      7
 
 
 //коды команд
